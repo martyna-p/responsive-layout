@@ -1,0 +1,160 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+}
+
+nav {
+  overflow: hidden;
+  background-color: olivedrab;
+  border: solid 4px black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.container {
+  width: 100vw;
+  min-height: max-content;
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding-top: 60px;
+}
+
+.firstCol {
+  display: grid;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.secondCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  text-align: center;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.firstSection, .secondSection {
+  display: flex;
+}
+
+.firstSection {
+  height: 260px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.squaresContainer {
+  height: 260px;
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondSection {
+  height: 150px;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.squareStart, .squareEnd {
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  background-color: red;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  width: 130px;
+  height: 130px;
+}
+
+.squareEnd {
+  align-self: flex-end;
+}
+
+.lines {
+  width: 140px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  background-color: blue;
+  height: 30px;
+  width: 140px;
+}
+
+.circleContainer {
+  height: 140px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  background-color: cadetblue;
+  border-radius: 9999px;
+  width: 140px;
+  height: 140px;
+}
+
+.rectangle {
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  background-color: blue;
+  width: 300px;
+  height: 500px;
+}
+
+/* tablet */
+@media (min-width: 583px) {
+  .container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rectangle {
+      background-color: red;
+  }
+}
+
+/* desktop */
+@media (min-width: 901px) {
+  .container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .firstCol {
+      display: grid;
+      grid-column: span 2 / span 2;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondCol {
+      grid-column: span 1 / span 1;
+  }
+
+  .rectangle {
+      background-color: white;
+  }
+}
